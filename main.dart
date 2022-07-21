@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_const, unnecessary_new
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/SecondScreen.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -21,7 +22,7 @@ class Home extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               )),
           centerTitle: true,
-          backgroundColor: Colors.purple[500],
+          backgroundColor: Colors.deepPurple[500],
         ),
         body: Container(
           margin: const EdgeInsets.all(15.0),
@@ -32,9 +33,10 @@ class Home extends StatelessWidget {
               // const Text('PRATEEK'),
               TextFormField(
                 decoration: InputDecoration(
+                    icon: const Icon(Icons.mail),
                     border: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: Colors.purple, //this has no effect
+                        color: Colors.deepPurple, //this has no effect
                       ),
                       gapPadding: 20.5,
                       borderRadius: BorderRadius.circular(10.0),
@@ -46,9 +48,10 @@ class Home extends StatelessWidget {
               ),
               TextFormField(
                 decoration: InputDecoration(
+                  icon: const Icon(Icons.password),
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(
-                      color: Colors.purple, //this has no effect
+                      color: Colors.deepPurple, //this has no effect
                     ),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -59,9 +62,13 @@ class Home extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: null,
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const SecondScreen();
+                  }));
+                },
                 style: TextButton.styleFrom(
-                  backgroundColor: Colors.purple,
+                  backgroundColor: Colors.deepPurple,
                 ),
                 child: const Text(
                   'Login',
@@ -80,6 +87,3 @@ class Home extends StatelessWidget {
         ));
   }
 }
-
- 
-     
